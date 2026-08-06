@@ -1,0 +1,30 @@
+.gallery{
+    padding:90px 10%;
+    background: #181818;
+    text-align:center;
+}
+
+.gallery h2{
+    font-size:48px;
+    color:#d4af37;
+    margin-bottom: 50px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:.4s;
+    cursor:pointer;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.05);
+}
