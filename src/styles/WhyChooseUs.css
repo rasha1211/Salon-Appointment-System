@@ -1,0 +1,41 @@
+.why{
+    padding:100px 10%;
+    background:#0c0000;
+    color:white;
+    text-align:center;
+}
+
+.why h2{
+    font-size:48px;
+    color:#d4af37;
+    margin-bottom:60px;
+}
+
+.why-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#1f1f1f;
+    padding:35px;
+    border-radius:20px;
+    transition:.3s;
+    border:2px solid transparent;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#d4af37;
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#d4af37;
+}
+
+.card p{
+    color:#ddd;
+    line-height:1.7;
+}

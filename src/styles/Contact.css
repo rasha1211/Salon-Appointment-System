@@ -1,0 +1,129 @@
+.contact{
+
+    background:#080000;
+
+    color:white;
+
+    padding:90px 10% 30px;
+
+}
+
+.contact h2{
+
+    text-align:center;
+
+    color:#d4af37;
+
+    font-size:48px;
+
+    margin-bottom:60px;
+
+}
+
+.contact-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:100px;
+
+    flex-wrap:wrap;
+
+}
+
+.contact-info{
+
+    flex:2;
+
+}
+
+.quick-links{
+
+    flex:1;
+
+}
+
+.contact-info h3,
+.quick-links h3{
+
+    color:#d4af37;
+
+    margin-bottom:25px;
+
+    font-size:30px;
+
+}
+
+.contact-info p{
+
+    margin:15px 0;
+
+    color:#ddd;
+
+    font-size:18px;
+
+}
+
+.quick-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.quick-links a{
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    margin:12px 0;
+
+    transition:.3s;
+
+}
+
+.quick-links a:hover{
+
+    color:#d4af37;
+
+    padding-left:8px;
+
+}
+
+hr{
+
+    margin:60px 0 20px;
+
+    border:1px solid #333;
+
+}
+
+.copyright{
+
+    text-align:center;
+
+    color:#888;
+
+}
+
+@media(max-width:768px){
+
+.contact-container{
+
+flex-direction:column;
+
+gap:50px;
+
+}
+
+}
+
+.icon{
+    color:#696457;
+    margin-right:12px;
+    font-size:18px;
+}
+    
