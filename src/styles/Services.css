@@ -1,57 +1,82 @@
-.services{
-    padding:90px 8%;
-    background:#f6ebeb;
+.services {
+    padding: 90px 8%;
+    background: #181818;
+    text-align: center;
 }
 
-.services h2{
-    text-align:center;
-    font-size:42px;
-    color:#222;
-    margin-bottom:60px;
+.services h2 {
+    font-size: 48px;
+    color: #dfdbcb;
+    margin-bottom: 60px;
 }
 
-.service-container{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-    gap:30px;
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
 }
 
-.card{
+/* SERVICES CARDS */
+.services .card {
+    background: #1f1f1f;
+    padding: 35px 25px;
+    border-radius: 18px;
+    text-align: center;
 
-    background:white;
+    border: 2px solid transparent;
 
-    padding:35px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 
-    border-radius:18px;
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
 
-    text-align:center;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-    transition:.4s;
+    cursor: pointer;
 }
 
-.card:hover{
+/* HOVER EFFECT */
+.services .card:hover {
+    transform: translateY(-10px);
 
-    transform:translateY(-10px);
+    border-color: #d4af37;
 
-    box-shadow:0 20px 40px rgba(236, 226, 226, 0.15);
-
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(212, 175, 55, 0.12);
 }
 
-.card h3{
-
-    color:#d4af37;
-
-    margin-bottom:15px;
+.services .card h3 {
+    color: #d4af37;
+    margin-bottom: 15px;
+    font-size: 22px;
 }
 
-.card p{
+.services .card p {
+    color: #ddd;
+    line-height: 1.6;
+    font-size: 16px;
+}
 
-    color:#666;
+/* TABLET */
+@media (max-width: 1000px) {
+    .service-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-    line-height:1.6;
+/* MOBILE */
+@media (max-width: 600px) {
+    .services {
+        padding: 70px 6%;
+    }
+
+    .services h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr;
+    }
 }

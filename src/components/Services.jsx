@@ -1,9 +1,9 @@
+
 import "../styles/Services.css";
 
 function Services() {
   return (
-    <section className="services">
-
+<section className="services" id="services">
       <h2>Our Premium Services</h2>
 
       <div className="service-container">
@@ -36,6 +36,16 @@ function Services() {
         <div className="card">
           <h3>Beard Styling</h3>
           <p>Modern beard grooming and styling.</p>
+        </div>
+
+        <div className="card">
+          <h3>Full Body Wax</h3>
+          <p>Smooth and silky skin all over.</p>
+        </div>
+
+        <div className="card">
+          <h3>Manicure & Pedicure</h3>
+          <p>Professional nail care for hands and feet.</p>
         </div>
 
       </div>

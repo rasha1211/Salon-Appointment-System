@@ -9,8 +9,7 @@ import gallery6 from "../assets/gallery6.jpg";
 
 function Gallery() {
   return (
-    <section className="gallery">
-      <h2>Our Gallery</h2>
+<section className="gallery" id="gallery">      <h2>Our Gallery</h2>
 
       <div className="gallery-grid">
         <img src={gallery1} alt="Gallery 1" />

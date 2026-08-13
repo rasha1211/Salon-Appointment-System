@@ -1,87 +1,327 @@
-.booking{
-
-    padding:100px 10%;
-
-    background:#111;
-
-    color:white;
-
-    text-align:center;
-
+.booking-section {
+  padding: 80px 10%;
+  background: #111;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-.booking h2{
-
-    font-size:48px;
-
-    color:#d4af37;
-
-    margin-bottom:15px;
-
+.booking-section h2 {
+  font-size: 42px;
+  color: #d4af37;
+  margin: 0 0 15px;
 }
 
-.booking p{
-
-    color:#ccc;
-
-    margin-bottom:50px;
-
+.booking-section p {
+  color: #ccc;
+  margin: 0 0 40px;
 }
 
-.booking-form{
+.booking-form {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
 
-    max-width:900px;
-
-    margin:auto;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:20px;
-
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .booking-form input,
-
 .booking-form select,
+.booking-form textarea {
+  width: 100%;
+  box-sizing: border-box;
 
-.booking-form textarea{
-
-    padding:18px;
-
-    border:none;
-
-    border-radius:12px;
-
-    font-size:17px;
-
-    outline:none;
-
+  padding: 18px;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  outline: none;
 }
 
-.booking-form button{
-
-    background:#d4af37;
-
-    color:black;
-
-    border:none;
-
-    padding:18px;
-
-    font-size:18px;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+.booking-form textarea {
+  min-height: 140px;
+  resize: vertical;
 }
 
-.booking-form button:hover{
+/* Confirm Appointment button only */
+.booking-form > button {
+  width: 100%;
+  background: #d8a816;
+  color: black;
+  border: none;
+  padding: 18px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    background:#f0c14b;
+.booking-form > button:hover {
+  background: #8e8b82;
+}
 
+
+/* Select Service dropdown */
+.service-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.service-dropdown-button {
+  width: 100%;
+  height: 62px;
+
+  background: #3d3d3d;
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+
+  padding: 0 18px;
+
+  font-size: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-align: left;
+  cursor: pointer;
+}
+
+.service-dropdown-button:hover {
+  background: #3d3d3d;
+}
+
+.service-arrow {
+  width: 8px;
+  height: 8px;
+
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+
+  
+
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.service-arrow.open {
+  transform: rotate(225deg);
+  margin-bottom: -2px;
+}
+
+
+
+/* Service options */
+.service-options {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+
+  width: 100%;
+
+  background: #3d3d3d;
+
+  border-radius: 12px;
+
+  padding: 8px 0;
+
+  z-index: 1000;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.service-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 20px 20px;;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+.service-option:hover {
+  background: #505050;
+}
+
+.service-option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+
+/* Success/error message */
+.booking-form > p {
+  margin: 5px 0 0;
+  color: #d4af37;
+}
+
+/* Make Gender dropdown arrow match Service arrow */
+.booking-form select[name="gender"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' fill='none' stroke='%23ffffff' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 20px 20px;
+
+  padding-right: 45px;
+}
+
+/* Appointment section entrance */
+.booking-section {
+    animation: bookingFadeIn 0.9s ease-out;
+}
+
+@keyframes bookingFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Input focus */
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+    background: #333;
+    transform: translateY(-1px);
+}
+
+/* Smooth input transition */
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    transition:
+        border 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        transform 0.2s ease;
+}
+
+/* Button */
+.booking-form > button {
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.booking-form > button:hover {
+    background: #e2c15a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+}
+
+/* Dropdown animation */
+.service-options {
+    animation: serviceDrop 0.25s ease-out;
+}
+
+@keyframes serviceDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Booking page entrance animation */
+
+.booking-section {
+    animation: bookingPageEnter 0.8s ease-out;
+}
+
+@keyframes bookingPageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* =================================
+   BOOKING PAGE ENTRANCE ANIMATION
+   ================================= */
+
+.booking-section {
+    animation: bookingPageEnter 0.8s ease-out both;
+}
+
+.booking-section h1 {
+    animation: bookingHeadingEnter 0.8s ease-out 0.1s both;
+}
+
+.booking-section > p {
+    animation: bookingHeadingEnter 0.8s ease-out 0.2s both;
+}
+
+.booking-form {
+    animation: bookingFormEnter 0.9s ease-out 0.3s both;
+}
+
+
+@keyframes bookingPageEnter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bookingHeadingEnter {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bookingFormEnter {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
