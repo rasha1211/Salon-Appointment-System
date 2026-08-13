@@ -64,7 +64,7 @@ function Contact() {
                     <a href="#services">Services</a>
                     <a href="#about">About</a>
                     <a href="#gallery">Gallery</a>
-                    <a href="/booking">Book Appointment</a>
+                    <a href="#booking">Book Appointment</a>
 
                 </div>
 
@@ -79,10 +79,9 @@ function Contact() {
 
                     <h3>Ready for a little<br />Luxe?</h3>
 
-                    <a href="/booking" className="contact-button">
-                        Book Appointment
-                    </a>
-
+                   <a href="#booking" className="contact-button">
+    Book Appointment
+</a> 
                 </div>
 
             </div>
