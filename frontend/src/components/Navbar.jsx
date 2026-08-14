@@ -1,33 +1,27 @@
 import "../styles/Navbar.css";
 
 function Navbar() {
+  return (
+    <nav>
+      <div className="logo">
+        Luxe Salon
+      </div>
 
-    return (
+      <div className="menu">
 
-        <nav>
+        <a href="#home">Home</a>
 
-            <div className="logo">
-                Luxe Salon
-            </div>
+        <a href="#services">Services</a>
 
-            <div className="menu">
+        <a href="#gallery">Gallery</a>
 
-                <a href="#">Home</a>
+        <a href="#about">About</a>
 
-                <a href="#">Services</a>
+        <a href="#contact">Contact</a>
 
-                <a href="#">Gallery</a>
-
-                <a href="#">About</a>
-
-                <a href="#">Contact</a>
-
-            </div>
-
-        </nav>
-
-    )
-
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;

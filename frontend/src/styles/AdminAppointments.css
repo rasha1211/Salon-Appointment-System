@@ -1,0 +1,181 @@
+.admin-appointments {
+    min-height: 100vh;
+    background: #111;
+    color: white;
+}
+
+.admin-appointments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    background: #181818;
+    border-bottom: 1px solid #333;
+}
+
+.admin-appointments-header h1 {
+    margin: 0;
+    color: #d4af37;
+}
+
+.admin-appointments-header p {
+    margin: 5px 0 0;
+    color: #bbb;
+}
+
+.admin-appointments-header button {
+    background: #d4af37;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.appointments-content {
+    padding: 60px;
+}
+
+.appointments-content h2 {
+    text-align: center;
+    color: #d4af37;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.appointments-subtitle {
+    text-align: center;
+    color: #bbb;
+    margin-bottom: 40px;
+}
+
+.appointments-status,
+.appointments-error {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 40px;
+}
+
+.appointments-error {
+    color: #ff6b6b;
+}
+
+.appointments-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1c1c1c;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.appointments-table th {
+    background: #d4af37;
+    color: black;
+    padding: 16px;
+    text-align: left;
+}
+
+.appointments-table td {
+    padding: 16px;
+    border-bottom: 1px solid #333;
+    color: #ddd;
+}
+
+.appointments-table tr:hover {
+    background: #252525;
+}
+
+.service-badge {
+    background: transparent;
+    color: #ddd;
+    padding: 0;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+.delete-btn {
+    background: #b33a3a;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.delete-btn:hover {
+    background: #922f2f;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #444;
+    color: white;
+}
+
+.status-badge.pending {
+    background: #665b2a;
+    color: #f5df70;
+}
+
+.status-badge.confirmed {
+    background: #234d32;
+    color: #7ee2a8;
+}
+
+.status-badge.completed {
+    background: #25445c;
+    color: #8bc7f5;
+}
+
+.status-badge.cancelled {
+    background: #5c2929;
+    color: #ff9999;
+}
+
+.status-select {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    background: #444;
+    color: white;
+}
+
+.status-select.pending {
+    background: #665b2a;
+    color: #f5df70;
+}
+
+.status-select.confirmed {
+    background: #234d32;
+    color: #7ee2a8;
+}
+
+.status-select.completed {
+    background: #25445c;
+    color: #8bc7f5;
+}
+
+.status-select.cancelled {
+    background: #5c2929;
+    color: #ff9999;
+}
+
+.status-select option {
+    background: #222;
+    color: white;
+}

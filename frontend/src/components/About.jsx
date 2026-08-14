@@ -22,10 +22,19 @@ function About() {
         <p>
           Using world-class products and modern techniques,
           we ensure every customer leaves looking and feeling
-          their absolute best.
+          their absolute best. For us, it's not just about services, it's about creating a personalized journey of self-expression and confidence.
         </p>
 
-        <button>Know More</button>
+        <button
+    onClick={() => {
+        document.getElementById("services").scrollIntoView({
+            behavior: "smooth"
+        });
+    }}
+>
+    Explore Our Services
+</button>
+
 
       </div>
 
