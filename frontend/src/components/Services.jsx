@@ -5,7 +5,7 @@ function Services() {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/services")
+    fetch("https://salon-appointment-system-production.up.railway.app/api/services")
       .then((response) => response.json())
       .then((data) => {
         setServices(data);

@@ -32,7 +32,7 @@ function Booking() {
     if (newState && services.length === 0) {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/services"
+          "https://salon-appointment-system-production.up.railway.app/api/services"
         );
 
         const data = await response.json();
@@ -77,8 +77,7 @@ function Booking() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/appointments",
-        {
+    "https://salon-appointment-system-production.up.railway.app/api/appointments",{
           method: "POST",
           headers: {
             "Content-Type": "application/json",

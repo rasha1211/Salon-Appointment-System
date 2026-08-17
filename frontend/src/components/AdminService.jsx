@@ -22,8 +22,10 @@ function AdminServices() {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/services",
-                {
+
+"https://salon-appointment-system-production.up.railway.ap"
+
+                ,{
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -50,7 +52,7 @@ function AdminServices() {
             setDuration("");
 
             const servicesResponse = await fetch(
-                "http://localhost:5000/api/services"
+"https://salon-appointment-system-production.up.railway.app"
             );
 
             const servicesData = await servicesResponse.json();
@@ -93,7 +95,7 @@ function AdminServices() {
         try {
 
             const response = await fetch(
-                `http://localhost:5000/api/services/${editingId}`,
+                `https://salon-appointment-system-production.up.railway.app/api/services/${editingId}`,
                 {
                     method: "PUT",
                     headers: {
@@ -123,7 +125,7 @@ function AdminServices() {
             setDuration("");
 
             const servicesResponse = await fetch(
-                "http://localhost:5000/api/services"
+                "https://salon-appointment-system-production.up.railway.app/api/services"
             );
 
             const servicesData = await servicesResponse.json();
@@ -155,7 +157,7 @@ function AdminServices() {
         try {
 
             const response = await fetch(
-                `http://localhost:5000/api/services/${id}`,
+                `https://salon-appointment-system-production.up.railway.app/api/services/${id}`,
                 {
                     method: "DELETE"
                 }
@@ -171,7 +173,7 @@ function AdminServices() {
             alert("Service deleted successfully!");
 
             const servicesResponse = await fetch(
-                "http://localhost:5000/api/services"
+                "https://salon-appointment-system-production.up.railway.app/api/services"
             );
 
             const servicesData = await servicesResponse.json();
@@ -207,7 +209,8 @@ function AdminServices() {
             try {
 
                 const response = await fetch(
-                    "http://localhost:5000/api/services"
+                    
+                    "https://salon-appointment-system-production.up.railway.app/api/services"
                 );
 
                 const data = await response.json();
