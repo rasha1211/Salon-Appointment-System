@@ -61,6 +61,6 @@ app.use("/api/services", serviceRoutes);
 app.listen(PORT, () => {
 
     console.log("=================================");
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
     console.log("=================================");
 });

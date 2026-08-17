@@ -7,7 +7,7 @@ const db = mysql.createConnection({
     port: process.env.MYSQLPORT || 3306,
     user: process.env.MYSQLUSER || "root",
     password: process.env.MYSQLPASSWORD,
-    database: process.env.MYSQLDATABASE || "salon_db"
+    database: process.env.DB_NAME || "salon_db"
 });
 
 db.connect((err) => {
