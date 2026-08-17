@@ -1,0 +1,359 @@
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.72),
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("../assets/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    overflow: hidden;
+
+    animation: heroBackground 12s ease-in-out infinite alternate;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    width: min(900px, 90%);
+
+    margin: 0 auto;
+
+    text-align: left;
+
+animation: heroContentReveal 1.2s ease-out forwards;}
+
+
+/* SMALL LABEL */
+
+.hero-label {
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 22px;
+
+    font-weight: 500;
+
+    opacity: 0.9;
+
+    animation: fadeUp 0.8s ease-out 0.2s both;
+}
+
+
+/* MAIN HEADING */
+
+.hero h1 {
+    font-size: clamp(55px, 8vw, 105px);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+
+    margin: 0 0 28px;
+
+    animation: fadeUp 0.9s ease-out 0.35s both;
+}
+
+
+/* GOLD ACCENT */
+
+.hero h1 span {
+    color: #f3f2ee;
+}
+
+
+/* DESCRIPTION */
+
+.hero-description {
+    max-width: 520px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 38px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    animation: fadeUp 0.9s ease-out 0.5s both;
+}
+
+
+/* BUTTON CONTAINER */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    animation: fadeUp 0.9s ease-out 0.65s both;
+}
+
+
+/* PRIMARY BUTTON */
+
+.hero-primary {
+    padding: 15px 32px;
+
+    background: #d4af37;
+
+    color: #111;
+
+    border: 1px solid #c7ab47;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    border-radius: 2px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.hero-primary:hover {
+    transform: translateY(-3px);
+
+    background: #e2c15a;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* SECONDARY LINK */
+
+.hero-secondary {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    letter-spacing: 0.5px;
+
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.hero-secondary:hover {
+    color: #413f36;
+
+    border-color: #d4af37;
+}
+
+
+/* SCROLL INDICATOR */
+
+.hero-scroll {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    opacity: 0.75;
+
+    animation: scrollFade 2s ease-in-out infinite;
+}
+
+
+.hero-scroll span {
+    display: block;
+
+    width: 1px;
+
+    height: 38px;
+
+    background: white;
+}
+
+
+.hero-scroll p {
+    margin: 0;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* HERO ENTRANCE ANIMATION */
+
+@keyframes heroContentReveal {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* SCROLL ANIMATION */
+
+@keyframes scrollFade {
+    0%,
+    100% {
+        opacity: 0.45;
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, 8px);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 90vh;
+
+        background-position: center;
+    }
+
+
+    .hero-content {
+        width: 88%;
+
+        text-align: center;
+    }
+
+
+    .hero-label {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(48px, 14vw, 72px);
+
+        letter-spacing: -2px;
+    }
+
+
+    .hero-description {
+        margin-left: auto;
+
+        margin-right: auto;
+
+        font-size: 16px;
+    }
+
+
+    .hero-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    .hero-scroll {
+        bottom: 18px;
+    }
+}
+
+@keyframes heroBackground {
+    from {
+        background-size: 100%;
+        background-position: center center;
+    }
+
+    to {
+        background-size: 108%;
+        background-position: center center;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Subtle entrance animation */
+.hero h1 {
+    animation: heroFadeUp 1s ease-out;
+}
+
+.hero p {
+    animation: heroFadeUp 1s ease-out 0.2s both;
+}
+
+.hero-buttons {
+    animation: heroFadeUp 1s ease-out 0.4s both;
+}
+
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,210 @@
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    padding: 100px 10%;
+
+    background: #171616;
+    color: white;
+
+    flex-wrap: wrap;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   ABOUT IMAGE
+========================= */
+
+.about-image {
+    flex: 1;
+
+    min-width: 300px;
+
+    animation: aboutImageReveal 1s ease-out both;
+}
+
+
+.about-image img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 20px;
+
+    transition:
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+
+/* Image hover */
+
+.about-image:hover img {
+    transform: scale(1.035);
+
+    filter: brightness(1.08);
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================
+   ABOUT CONTENT
+========================= */
+
+.about-content {
+    flex: 1;
+
+    min-width: 300px;
+
+    animation: aboutContentReveal 1s ease-out 0.2s both;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.about-content h2 {
+    color: #d4af37;
+
+    font-size: 48px;
+
+    margin-bottom: 20px;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================
+   PARAGRAPHS
+========================= */
+
+.about-content p {
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+
+    color: #ddd;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.about-content button {
+    padding: 15px 35px;
+
+    background: #d4af37;
+
+    color: #181818;
+
+    border: 1px solid #d4af37;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    margin-top: 8px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Button hover */
+
+.about-content button:hover {
+    transform: translateY(-4px);
+
+    background: #e2c15a;
+
+    box-shadow: 0 12px 25px rgba(212, 175, 55, 0.18);
+}
+
+
+/* =========================
+   ENTRANCE ANIMATIONS
+========================= */
+
+@keyframes aboutImageReveal {
+
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes aboutContentReveal {
+
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .about {
+        padding: 80px 6%;
+
+        gap: 40px;
+    }
+
+
+    .about-image,
+    .about-content {
+        min-width: 100%;
+    }
+
+
+    .about-content {
+        text-align: center;
+    }
+
+
+    .about-content h2 {
+        font-size: 38px;
+    }
+
+
+    .about-content p {
+        font-size: 15px;
+    }
+
+}
