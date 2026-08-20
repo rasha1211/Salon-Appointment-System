@@ -12,7 +12,7 @@ function AdminAppointments() {
 
     try {
         const response = await fetch(
-            `http://localhost:5000/api/appointments/${id}/status`,
+            "https://salon-appointment-system-production.up.railway.app/api/appointments/" + id + "/status",
             {
                 method: "PUT",
                 headers: {
@@ -57,7 +57,7 @@ function AdminAppointments() {
         const loadAppointments = async () => {
             try {
                 const response = await fetch(
-                    "http://localhost:5000/api/appointments/all"
+                    "https://salon-appointment-system-production.up.railway.app/api/appointments/all"
                 );
 
                 const data = await response.json();
@@ -249,7 +249,7 @@ function AdminAppointments() {
         try {
 
             const response = await fetch(
-                `http://localhost:5000/api/appointments/${appointment.id}`,
+                `https://salon-appointment-system-production.up.railway.app/api/appointments/${appointment.id}`,
                 {
                     method: "DELETE"
                 }

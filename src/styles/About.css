@@ -1,43 +1,108 @@
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
 .about {
+    position: relative;
+
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
-    gap: 60px;
+    gap: 70px;
 
+    width: 100%;
     padding: 100px 10%;
+
+    box-sizing: border-box;
 
     background: #171616;
     color: white;
-
-    flex-wrap: wrap;
 
     overflow: hidden;
 }
 
 
-/* =========================
-   ABOUT IMAGE
-========================= */
+/* =========================================
+   AMBIENT GOLD LIGHT
+========================================= */
 
-.about-image {
-    flex: 1;
+.about::before {
+    content: "";
 
-    min-width: 300px;
+    position: absolute;
 
-    animation: aboutImageReveal 1s ease-out both;
+    width: 500px;
+    height: 500px;
+
+    left: -220px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(212, 175, 55, 0.10),
+        transparent 70%
+    );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition: opacity 1.2s ease;
 }
 
 
-.about-image img {
-    width: 100%;
+/* Keep content above ambient light */
 
-    display: block;
+.about > * {
+    position: relative;
+    z-index: 1;
+}
 
-    border-radius: 20px;
+
+/* =========================================
+   IMAGE CONTAINER
+========================================= */
+
+.about-image {
+    flex: 0 0 45%;
+
+    width: 45%;
+    max-width: 520px;
+
+    opacity: 0;
+
+    transform: translateX(-60px);
 
     transition:
-        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.9s ease,
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.about-image img {
+    display: block;
+
+    width: 100%;
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45);
+
+    transition:
+        transform 0.6s ease,
         filter 0.5s ease,
         box-shadow 0.5s ease;
 }
@@ -46,65 +111,76 @@
 /* Image hover */
 
 .about-image:hover img {
-    transform: scale(1.035);
+    transform: scale(1.025);
 
     filter: brightness(1.08);
 
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.55);
 }
 
 
-/* =========================
-   ABOUT CONTENT
-========================= */
+/* =========================================
+   CONTENT
+========================================= */
 
 .about-content {
     flex: 1;
 
-    min-width: 300px;
+    max-width: 560px;
 
-    animation: aboutContentReveal 1s ease-out 0.2s both;
+    opacity: 0;
+
+    transform: translateX(60px);
+
+    transition:
+        opacity 0.9s ease 0.2s,
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
 }
 
 
-/* =========================
+/* =========================================
    HEADING
-========================= */
+========================================= */
 
 .about-content h2 {
     color: #d4af37;
 
-    font-size: 48px;
+    font-size: 46px;
 
-    margin-bottom: 20px;
+    line-height: 1.1;
 
     font-weight: 500;
 
     letter-spacing: -1px;
+
+    margin: 0 0 25px;
 }
 
 
-/* =========================
+/* =========================================
    PARAGRAPHS
-========================= */
+========================================= */
 
 .about-content p {
-    line-height: 1.8;
-
-    margin-bottom: 20px;
-
-    color: #ddd;
+    color: #d7d7d7;
 
     font-size: 16px;
+
+    line-height: 1.8;
+
+    margin: 0 0 20px;
 }
 
 
-/* =========================
+/* =========================================
    BUTTON
-========================= */
+========================================= */
 
 .about-content button {
-    padding: 15px 35px;
+    margin-top: 12px;
+
+    padding: 14px 32px;
 
     background: #d4af37;
 
@@ -112,15 +188,15 @@
 
     border: 1px solid #d4af37;
 
-    border-radius: 50px;
+    border-radius: 3px;
 
     cursor: pointer;
 
-    font-size: 17px;
+    font-size: 15px;
 
     font-weight: 600;
 
-    margin-top: 8px;
+    letter-spacing: 0.4px;
 
     transition:
         transform 0.3s ease,
@@ -129,72 +205,131 @@
 }
 
 
-/* Button hover */
-
 .about-content button:hover {
-    transform: translateY(-4px);
-
     background: #e2c15a;
 
-    box-shadow: 0 12px 25px rgba(212, 175, 55, 0.18);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(212, 175, 55, 0.20);
 }
 
 
-/* =========================
-   ENTRANCE ANIMATIONS
-========================= */
+/* =========================================
+   SCROLL VISIBLE STATE
+========================================= */
 
-@keyframes aboutImageReveal {
+.about.scroll-visible::before {
+    opacity: 1;
+}
+
+
+.about.scroll-visible .about-image {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+.about.scroll-visible .about-content {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================
+   TEXT SEQUENTIAL ANIMATION
+========================================= */
+
+.about-line {
+    opacity: 0;
+
+    transform: translateY(35px);
+}
+
+
+/* Heading */
+
+.about.scroll-visible .about-heading {
+    animation:
+        aboutTextReveal 0.7s ease-out 0.15s forwards;
+}
+
+
+/* First paragraph */
+
+.about.scroll-visible .about-paragraph:nth-of-type(1) {
+    animation:
+        aboutTextReveal 0.7s ease-out 0.35s forwards;
+}
+
+
+/* Second paragraph */
+
+.about.scroll-visible .about-paragraph:nth-of-type(2) {
+    animation:
+        aboutTextReveal 0.7s ease-out 0.55s forwards;
+}
+
+
+/* Button */
+
+.about.scroll-visible .about-button {
+    animation:
+        aboutTextReveal 0.7s ease-out 0.75s forwards;
+}
+
+
+@keyframes aboutTextReveal {
 
     from {
         opacity: 0;
-        transform: translateX(-35px);
+        transform: translateY(35px);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
-
 }
 
 
-@keyframes aboutContentReveal {
-
-    from {
-        opacity: 0;
-        transform: translateX(35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-}
-
-
-/* =========================
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
 @media (max-width: 768px) {
 
     .about {
-        padding: 80px 6%;
+        flex-direction: column;
 
         gap: 40px;
-    }
 
+        padding: 80px 6%;
 
-    .about-image,
-    .about-content {
-        min-width: 100%;
-    }
-
-
-    .about-content {
         text-align: center;
+    }
+
+
+    .about-image {
+        flex: none;
+
+        width: 100%;
+
+        max-width: 430px;
+    }
+
+
+    .about-image img {
+        height: 330px;
+    }
+
+
+    .about-content {
+        width: 100%;
+
+        max-width: 600px;
     }
 
 
@@ -207,4 +342,30 @@
         font-size: 15px;
     }
 
+
+    .about-content button {
+        margin-top: 10px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .about {
+        padding: 70px 5%;
+    }
+
+
+    .about-image img {
+        height: 280px;
+    }
+
+
+    .about-content h2 {
+        font-size: 32px;
+    }
 }

@@ -1,0 +1,295 @@
+
+.admin-services-page {
+    min-height: 100vh;
+    padding: 40px;
+    background: #111;
+    color: white;
+    box-sizing: border-box;
+}
+
+
+/* HEADER */
+
+.services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.services-header h1 {
+    margin: 0;
+    color: #d4af37;
+    font-size: 34px;
+}
+
+.services-header p {
+    margin-top: 8px;
+    color: #aaa;
+}
+
+
+/* DASHBOARD BUTTON */
+
+.dashboard-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    background: #d4af37;
+    color: #111;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.dashboard-button:hover {
+    background: #f0cc55;
+}
+
+
+/* FORM CARD */
+
+.service-form-card {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.service-form-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #d4af37;
+}
+
+
+/* FORM */
+
+.service-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 15px;
+    align-items: center;
+}
+
+.service-form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    background: #111;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 6px;
+    outline: none;
+}
+
+.service-form input:focus {
+    border-color: #d4af37;
+}
+
+
+/* FORM BUTTONS */
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.add-button,
+.update-button,
+.cancel-button {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.add-button,
+.update-button {
+    background: #d4af37;
+    color: #111;
+}
+
+.add-button:hover,
+.update-button:hover {
+    background: #f0cc55;
+}
+
+.cancel-button {
+    background: #555;
+    color: white;
+}
+
+.cancel-button:hover {
+    background: #666;
+}
+
+
+/* SERVICES LIST */
+
+.services-list-card {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.services-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 25px;
+    border-bottom: 1px solid #333;
+}
+
+.services-list-header h2 {
+    margin: 0;
+    color: #d4af37;
+}
+
+.services-list-header span {
+    color: #aaa;
+}
+
+
+/* TABLE */
+
+.services-table {
+    width: 100%;
+}
+
+.service-table-header,
+.service-table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 25px;
+}
+
+.service-table-header {
+    background: #151515;
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.service-table-row {
+    border-top: 1px solid #333;
+}
+
+.service-table-row:hover {
+    background: #202020;
+}
+
+
+/* SERVICE NAME */
+
+.service-name strong {
+    color: white;
+    font-size: 16px;
+}
+
+
+/* PRICE */
+
+.service-price {
+    color: #d4af37;
+    font-weight: 600;
+}
+
+
+/* DURATION */
+
+.service-duration {
+    color: #ccc;
+}
+
+
+/* ACTIONS */
+
+.service-actions {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* EDIT */
+
+.edit-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background: #d4af37;
+    color: #111;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background: #f0cc55;
+}
+
+
+/* DELETE */
+
+.delete-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background: #8b2e2e;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background: #a83a3a;
+}
+
+
+/* LOADING / EMPTY */
+
+.loading-text,
+.empty-text {
+    padding: 30px;
+    text-align: center;
+    color: #aaa;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .admin-services-page {
+        padding: 20px;
+    }
+
+    .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .service-form {
+        grid-template-columns: 1fr;
+    }
+
+    .service-table-header {
+        display: none;
+    }
+
+    .service-table-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .service-actions {
+        margin-top: 10px;
+    }
+
+}

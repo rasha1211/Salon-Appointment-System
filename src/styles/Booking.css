@@ -1,246 +1,689 @@
+/* =========================================
+   BOOKING SECTION
+========================================= */
+
 .booking-section {
-  padding: 80px 10%;
-  background: #111;
-  color: white;
-  text-align: center;
-  box-sizing: border-box;
+    position: relative;
+    padding: 110px 8%;
+    background:
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(212, 175, 55, 0.08),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(212, 175, 55, 0.06),
+            transparent 30%
+        ),
+        #111;
+
+    color: white;
+    overflow: hidden;
 }
 
-.booking-section h2 {
-  font-size: 42px;
-  color: #d4af37;
-  margin: 0 0 15px;
+
+/* =========================================
+   AMBIENT LIGHT
+========================================= */
+
+.booking-glow {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(212, 175, 55, 0.12),
+        transparent 70%
+    );
+
+    filter: blur(45px);
+
+    pointer-events: none;
 }
 
-.booking-section p {
-  color: #ccc;
-  margin: 0 0 40px;
+.booking-glow-left {
+    left: -220px;
+    top: 20%;
 }
+
+.booking-glow-right {
+    right: -220px;
+    bottom: 10%;
+}
+
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.booking-layout {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1250px;
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(320px, 0.85fr)
+        minmax(450px, 1.15fr);
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   LEFT INFORMATION
+========================================= */
+
+.booking-info {
+    padding: 20px 0;
+}
+
+
+.booking-label {
+    margin: 0 0 22px;
+
+    color: #d4af37;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+.booking-info h1 {
+    margin: 0 0 28px;
+
+    font-size: clamp(48px, 5vw, 72px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+
+    color: #f5f3ee;
+}
+
+
+.booking-info h1 span {
+    display: block;
+
+    color: #d4af37;
+}
+
+
+.booking-intro {
+    max-width: 500px;
+
+    margin: 0 0 45px;
+
+    color: #bdbdbd;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.booking-features {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+.booking-feature {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+}
+
+
+.feature-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(212, 175, 55, 0.45);
+
+    border-radius: 50%;
+
+    color: #d4af37;
+
+    font-size: 17px;
+
+    background: rgba(212, 175, 55, 0.05);
+}
+
+
+.booking-feature h3 {
+    margin: 0 0 5px;
+
+    color: #f2f2f2;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+
+.booking-feature p {
+    margin: 0;
+
+    color: #929292;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   DECORATIVE LINE
+========================================= */
+
+.booking-line {
+    width: 80px;
+
+    height: 1px;
+
+    margin: 38px 0 18px;
+
+    background: linear-gradient(
+        to right,
+        #d4af37,
+        transparent
+    );
+}
+
+
+.booking-note {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+
+    font-style: italic;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   FORM WRAPPER
+========================================= */
+
+.booking-form-wrapper {
+    position: relative;
+
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.06),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border: 1px solid rgba(212, 175, 55, 0.18);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =========================================
+   FORM HEADER
+========================================= */
+
+.booking-form-header {
+    margin-bottom: 30px;
+
+    text-align: left;
+}
+
+
+.booking-form-header span {
+    color: #d4af37;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+
+.booking-form-header h2 {
+    margin: 10px 0 8px;
+
+    color: #f4f2ed;
+
+    font-size: 32px;
+
+    font-weight: 500;
+}
+
+
+.booking-form-header p {
+    margin: 0;
+
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
 
 .booking-form {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px;
-  box-sizing: border-box;
+    width: 100%;
 
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+    position: relative;
+
+    overflow: visible;
 }
+
+
+/* =========================================
+   INPUTS
+========================================= */
 
 .booking-form input,
 .booking-form select,
 .booking-form textarea {
-  width: 100%;
-  box-sizing: border-box;
+    width: 100%;
 
-  padding: 18px;
-  border: none;
-  border-radius: 12px;
-  font-size: 17px;
-  outline: none;
+    box-sizing: border-box;
+
+    padding: 16px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+
+    background: #1c1c1c;
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.25s ease;
 }
+
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+    color: #777;
+}
+
+
+.booking-form input:hover,
+.booking-form select:hover,
+.booking-form textarea:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    border-color: #d4af37;
+
+    background: #202020;
+
+    box-shadow:
+        0 0 0 3px rgba(212, 175, 55, 0.08);
+
+    transform: translateY(-1px);
+}
+
 
 .booking-form textarea {
-  min-height: 140px;
-  resize: vertical;
-}
+    min-height: 120px;
 
-/* Confirm Appointment button only */
-.booking-form > button {
-  width: 100%;
-  background: #d8a816;
-  color: black;
-  border: none;
-  padding: 18px;
-  font-size: 18px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.3s;
-}
+    resize: vertical;
 
-.booking-form > button:hover {
-  background: #8e8b82;
+    line-height: 1.6;
 }
 
 
-/* Select Service dropdown */
+/* =========================================
+   GENDER SELECT
+========================================= */
+
+.booking-form select {
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    cursor: pointer;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' fill='none' stroke='%23d4af37' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+
+    background-position: right 18px center;
+
+    padding-right: 45px;
+}
+
+
+/* =========================================
+   SERVICE DROPDOWN
+========================================= */
+
 .service-dropdown {
-  position: relative;
-  width: 100%;
+    position: relative;
+
+    width: 100%;
+
+    z-index: 20;
 }
+
 
 .service-dropdown-button {
-  width: 100%;
-  height: 62px;
+    width: 100%;
 
-  background: #3d3d3d;
-  color: white;
+    height: 54px;
 
-  border: none;
-  border-radius: 12px;
+    padding: 0 18px;
 
-  padding: 0 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 
-  font-size: 17px;
+    border-radius: 10px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    background: #1c1c1c;
 
-  text-align: left;
-  cursor: pointer;
+    color: #aaa;
+
+    font-size: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        border 0.3s ease,
+        background 0.3s ease;
 }
+
 
 .service-dropdown-button:hover {
-  background: #3d3d3d;
+    border-color: rgba(212, 175, 55, 0.35);
+
+    background: #202020;
 }
+
 
 .service-arrow {
-  width: 8px;
-  height: 8px;
+    width: 8px;
+    height: 8px;
 
-  border-right: 2px solid white;
-  border-bottom: 2px solid white;
+    border-right: 1px solid #d4af37;
 
-  transform: rotate(45deg);
-  transition: transform 0.2s ease;
+    border-bottom: 1px solid #d4af37;
 
-  
+    transform: rotate(45deg);
 
-  margin-right: 4px;
-  margin-bottom: 4px;
+    transition: transform 0.25s ease;
 }
+
 
 .service-arrow.open {
-  transform: rotate(225deg);
-  margin-bottom: -2px;
+    transform: rotate(225deg);
 }
 
 
+/* =========================================
+   SERVICE OPTIONS
+========================================= */
 
-/* Service options */
 .service-options {
-  position: absolute;
-  top: calc(100% + 5px);
-  left: 0;
+    position: absolute;
 
-  width: 100%;
+    top: calc(100% + 6px);
 
-  background: #3d3d3d;
+    left: 0;
 
-  border-radius: 12px;
+    width: 100%;
 
-  padding: 8px 0;
+    max-height: 280px;
 
-  z-index: 1000;
+    overflow-y: auto;
 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    padding: 7px 0;
+
+    box-sizing: border-box;
+
+    background: #242424;
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.55);
+
+    z-index: 9999;
+
+    animation: serviceDrop 0.25s ease-out;
 }
+
 
 .service-option {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+    display: flex;
 
-  padding: 20px 20px;;
+    align-items: center;
 
-  color: white;
+    gap: 12px;
 
-  cursor: pointer;
+    padding: 13px 18px;
 
-  font-size: 16px;
+    color: #ddd;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
 }
+
 
 .service-option:hover {
-  background: #505050;
+    background: rgba(212, 175, 55, 0.08);
+
+    color: #d4af37;
 }
+
 
 .service-option input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
+    width: 16px;
+    height: 16px;
+
+    accent-color: #d4af37;
+
+    cursor: pointer;
 }
 
 
-/* Success/error message */
-.booking-form > p {
-  margin: 5px 0 0;
-  color: #d4af37;
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.booking-form > button {
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding: 17px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #d4af37;
+
+    color: #111;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 }
 
-/* Make Gender dropdown arrow match Service arrow */
-.booking-form select[name="gender"] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' fill='none' stroke='%23ffffff' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+.booking-form > button:hover {
+    background: #e4c45c;
 
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-  background-size: 20px 20px;
+    transform: translateY(-3px);
 
-  padding-right: 45px;
+    box-shadow:
+        0 12px 30px rgba(212, 175, 55, 0.22);
 }
 
-/* Appointment section entrance */
+
+.booking-form > button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.booking-message {
+    margin: 5px 0 0 !important;
+
+    color: #d4af37 !important;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
 .booking-section {
-    animation: bookingFadeIn 0.9s ease-out;
+    animation: bookingFade 0.8s ease both;
 }
 
-@keyframes bookingFadeIn {
+
+.booking-info {
+    animation: bookingInfoReveal 0.9s
+        cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+
+.booking-form-wrapper {
+    animation: bookingFormReveal 0.9s
+        cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+
+@keyframes bookingFade {
     from {
         opacity: 0;
-        transform: translateY(25px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
-/* Input focus */
-.booking-form input:focus,
-.booking-form select:focus,
-.booking-form textarea:focus {
-    border: 1px solid #d4af37;
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
-    background: #333;
-    transform: translateY(-1px);
+
+@keyframes bookingInfoReveal {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-/* Smooth input transition */
-.booking-form input,
-.booking-form select,
-.booking-form textarea {
-    transition:
-        border 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease,
-        transform 0.2s ease;
+
+@keyframes bookingFormReveal {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-/* Button */
-.booking-form > button {
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.booking-form > button:hover {
-    background: #e2c15a;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
-}
-
-/* Dropdown animation */
-.service-options {
-    animation: serviceDrop 0.25s ease-out;
-}
 
 @keyframes serviceDrop {
     from {
@@ -254,74 +697,80 @@
     }
 }
 
-/* Booking page entrance animation */
 
-.booking-section {
-    animation: bookingPageEnter 0.8s ease-out;
-}
+/* =========================================
+   MOBILE
+========================================= */
 
-@keyframes bookingPageEnter {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
+@media (max-width: 900px) {
+
+    .booking-section {
+        padding: 80px 6%;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-/* =================================
-   BOOKING PAGE ENTRANCE ANIMATION
-   ================================= */
+    .booking-layout {
+        grid-template-columns: 1fr;
 
-.booking-section {
-    animation: bookingPageEnter 0.8s ease-out both;
-}
-
-.booking-section h1 {
-    animation: bookingHeadingEnter 0.8s ease-out 0.1s both;
-}
-
-.booking-section > p {
-    animation: bookingHeadingEnter 0.8s ease-out 0.2s both;
-}
-
-.booking-form {
-    animation: bookingFormEnter 0.9s ease-out 0.3s both;
-}
-
-
-@keyframes bookingPageEnter {
-    from {
-        opacity: 0;
+        gap: 55px;
     }
 
-    to {
-        opacity: 1;
+    .booking-info {
+        text-align: center;
     }
+
+    .booking-info h1 {
+        font-size: 52px;
+    }
+
+    .booking-intro {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .booking-feature {
+        text-align: left;
+
+        max-width: 500px;
+
+        margin: 0 auto;
+    }
+
+    .booking-line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .booking-form-wrapper {
+        padding: 30px 24px;
+    }
+
 }
 
-@keyframes bookingHeadingEnter {
-    from {
-        opacity: 0;
-        transform: translateY(18px);
+
+@media (max-width: 600px) {
+
+    .booking-section {
+        padding: 70px 5%;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+    .booking-info h1 {
+        font-size: 45px;
 
-@keyframes bookingFormEnter {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
+        letter-spacing: -2px;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .booking-intro {
+        font-size: 15px;
     }
+
+    .booking-form-wrapper {
+        padding: 25px 18px;
+
+        border-radius: 18px;
+    }
+
+    .booking-form-header h2 {
+        font-size: 27px;
+    }
+
 }

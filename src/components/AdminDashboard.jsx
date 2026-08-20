@@ -21,7 +21,7 @@ function AdminDashboard() {
 
                 // Load dashboard statistics
                 const statsResponse = await fetch(
-                    "http://localhost:5000/api/appointments/stats"
+                    "https://salon-appointment-system-production.up.railway.app/api/appointments/stats"
                 );
 
                 const statsData = await statsResponse.json();
@@ -233,21 +233,7 @@ function AdminDashboard() {
                     </div>
 
 
-                    {/* CUSTOMERS */}
-
-                    <div className="admin-card">
-
-                        <h3>Customers</h3>
-
-                        <p>
-                            View customer information
-                        </p>
-
-                        <button>
-                            View Customers
-                        </button>
-
-                    </div>
+                    
 
                 </div>
 

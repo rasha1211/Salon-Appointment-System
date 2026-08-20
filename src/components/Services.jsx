@@ -1,57 +1,219 @@
-
+import { useEffect, useRef, useState } from "react";
 import "../styles/Services.css";
 
+import haircutImage from "../assets/service-haircut.jpg";
+import hairspaImage from "../assets/service-hairspa.jpg";
+import haircolourImage from "../assets/service-haircolour.jpg";
+import facialImage from "../assets/service-facial.jpg";
+import manicureImage from "../assets/service-manicure.jpg";
+import pedicureImage from "../assets/service-pedicure.jpg";
+import beardImage from "../assets/service-beard.jpg";
+
 function Services() {
-  return (
-<section className="services" id="services">
-      <h2>Our Premium Services</h2>
+    const servicesSectionRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
 
-      <div className="service-container">
+    // ==========================================
+    // FIXED PREMIUM SERVICES
+    // These are NOT loaded from the database.
+    // ==========================================
 
-        <div className="card">
-          <h3>Hair Cut</h3>
-          <p>Professional styling for men and women.</p>
-        </div>
+    const premiumServices = [
+        {
+            id: "premium-haircut",
+            name: "Haircut",
+            duration: 45,
+            price: 500,
+            image: haircutImage,
+            description:
+                "Professional styling for men and women.",
+        },
 
-        <div className="card">
-          <h3>Hair Spa</h3>
-          <p>Healthy and nourishing treatment.</p>
-        </div>
+        {
+            id: "premium-hairspa",
+            name: "Hair Spa",
+            duration: 60,
+            price: 1200,
+            image: hairspaImage,
+            description:
+                "Healthy and nourishing treatment for smooth, beautiful hair.",
+        },
 
-        <div className="card">
-          <h3>Hair Color</h3>
-          <p>Premium coloring by experts.</p>
-        </div>
+        {
+            id: "premium-haircolour",
+            name: "Hair Colour",
+            duration: 90,
+            price: 1800,
+            image: haircolourImage,
+            description:
+                "Premium hair colouring performed by experienced professionals.",
+        },
 
-        <div className="card">
-          <h3>Facial</h3>
-          <p>Glow enhancing facial treatment.</p>
-        </div>
+        {
+            id: "premium-facial",
+            name: "Facial",
+            duration: 60,
+            price: 1000,
+            image: facialImage,
+            description:
+                "Glow-enhancing facial treatment for fresh and radiant skin.",
+        },
 
-        <div className="card">
-          <h3>Bridal Makeup</h3>
-          <p>Elegant makeup for every occasion.</p>
-        </div>
+        {
+            id: "premium-manicure",
+            name: "Manicure",
+            duration: 45,
+            price: 600,
+            image: manicureImage,
+            description:
+                "Professional nail care for beautiful and well-groomed hands.",
+        },
 
-        <div className="card">
-          <h3>Beard Styling</h3>
-          <p>Modern beard grooming and styling.</p>
-        </div>
+        {
+            id: "premium-pedicure",
+            name: "Pedicure",
+            duration: 50,
+            price: 700,
+            image: pedicureImage,
+            description:
+                "Relaxing foot and nail care for a clean and polished look.",
+        },
 
-        <div className="card">
-          <h3>Full Body Wax</h3>
-          <p>Smooth and silky skin all over.</p>
-        </div>
+        {
+            id: "premium-beard",
+            name: "Beard Grooming",
+            duration: 30,
+            price: 400,
+            image: beardImage,
+            description:
+                "Modern beard trimming, shaping and grooming for a refined look.",
+        },
+    ];
 
-        <div className="card">
-          <h3>Manicure & Pedicure</h3>
-          <p>Professional nail care for hands and feet.</p>
-        </div>
+    // ==========================================
+    // RESTART ANIMATION EVERY TIME
+    // SERVICES ENTER VIEWPORT
+    // ==========================================
 
-      </div>
+    useEffect(() => {
+        const section = servicesSectionRef.current;
 
-    </section>
-  );
+        if (!section) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(false);
+
+                    requestAnimationFrame(() => {
+                        setIsVisible(true);
+                    });
+                } else {
+                    setIsVisible(false);
+                }
+            },
+            {
+                threshold: 0.15,
+            }
+        );
+
+        observer.observe(section);
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
+    return (
+        <section
+            ref={servicesSectionRef}
+            className={`services ${
+                isVisible ? "services-visible" : ""
+            }`}
+            id="services"
+        >
+
+            {/* ==========================================
+                HEADING
+            ========================================== */}
+
+            <div className="services-heading">
+                <span>WHAT WE OFFER</span>
+
+                <h2>Our Premium Services</h2>
+
+                <p>
+                    Expert beauty and grooming services crafted
+                    to make you look and feel your best.
+                </p>
+            </div>
+
+
+            {/* ==========================================
+                SERVICE CARDS
+            ========================================== */}
+
+            <div className="service-container">
+
+                {premiumServices.map((service, index) => (
+
+                    <div
+                        className="service-card"
+                        key={service.id}
+                        style={{
+                            "--card-delay": `${index * 0.15}s`,
+                        }}
+                    >
+
+                        <div className="service-image">
+
+                            <img
+                                src={service.image}
+                                alt={service.name}
+                            />
+
+                            <div className="service-image-overlay"></div>
+
+                        </div>
+
+
+                        <div className="service-card-content">
+
+                            <span className="service-number">
+                                {String(index + 1).padStart(2, "0")}
+                            </span>
+
+                            <h3>
+                                {service.name}
+                            </h3>
+
+                            <p className="service-description">
+                                {service.description}
+                            </p>
+
+
+                            <div className="service-info">
+
+                                <span>
+                                    {service.duration} minutes
+                                </span>
+
+                                <span>
+                                    ₹{service.price}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                ))}
+
+            </div>
+
+        </section>
+    );
 }
 
 export default Services;
