@@ -40,6 +40,9 @@ router.post("/", (req, res) => {
 
     const {
         name,
+        category,
+        description,
+        image_url,
         price,
         duration
     } = req.body;
@@ -53,13 +56,20 @@ router.post("/", (req, res) => {
 
     const sql = `
         INSERT INTO services
-        (name, price, duration, is_active)
-        VALUES (?, ?, ?, 1)
+        (name, category, description, image_url, price, duration, is_active)
+        VALUES (?, ?, ?, ?, ?, ?, 1)
     `;
 
     db.query(
         sql,
-        [name, price, duration],
+        [
+            name,
+            category || null,
+            description || null,
+            image_url || null,
+            price,
+            duration
+        ],
         (err, result) => {
 
             if (err) {
@@ -85,6 +95,7 @@ router.post("/", (req, res) => {
 
 
 // ==========================================
+// ==========================================
 // UPDATE SERVICE
 // ==========================================
 
@@ -94,24 +105,36 @@ router.put("/:id", (req, res) => {
 
     const {
         name,
+        category,
+        description,
+        image_url,
         price,
-        duration,
-        is_active
+        duration
     } = req.body;
 
     const sql = `
         UPDATE services
         SET
             name = ?,
+            category = ?,
+            description = ?,
+            image_url = ?,
             price = ?,
-            duration = ?,
-            is_active = ?
+            duration = ?
         WHERE id = ?
     `;
 
     db.query(
         sql,
-        [name, price, duration, is_active, id],
+        [
+            name,
+            category || null,
+            description || null,
+            image_url || null,
+            price,
+            duration,
+            id
+        ],
         (err, result) => {
 
             if (err) {
