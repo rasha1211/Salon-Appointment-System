@@ -12,7 +12,7 @@ function AdminAppointments() {
 
     try {
         const response = await fetch(
-            `https://salon-appointment-system-production.up.railway.app/api/appointments/${id}/status`,
+            "https://salon-appointment-system-production.up.railway.app/api/appointments/" + id + "/status",
             {
                 method: "PUT",
                 headers: {
@@ -57,7 +57,8 @@ function AdminAppointments() {
         const loadAppointments = async () => {
             try {
                 const response = await fetch(
-"https://salon-appointment-system-production.up.railway.app/api/appointments"                );
+                    "https://salon-appointment-system-production.up.railway.app/api/appointments/all"
+                );
 
                 const data = await response.json();
 

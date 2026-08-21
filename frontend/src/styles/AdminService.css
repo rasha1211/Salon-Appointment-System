@@ -1,432 +1,295 @@
-/* =========================================
-   ADMIN SERVICES PAGE
-   ========================================= */
 
-.admin-services {
+.admin-services-page {
     min-height: 100vh;
-    background: #0d0d0f;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+    padding: 40px;
+    background: #111;
+    color: white;
+    box-sizing: border-box;
 }
 
 
-/* =========================================
-   HEADER
-   ========================================= */
+/* HEADER */
 
-.admin-header {
-    width: 100%;
-    box-sizing: border-box;
-
-    padding: 22px 6%;
-
-    background: #111113;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-
+.services-header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-between;
+    margin-bottom: 35px;
 }
 
-.admin-header h1 {
+.services-header h1 {
     margin: 0;
-
     color: #d4af37;
-
-    font-size: 28px;
-    letter-spacing: 1px;
+    font-size: 34px;
 }
 
-.admin-header p {
-    margin: 5px 0 0;
-
-    color: #999;
-    font-size: 14px;
-}
-
-.admin-header button {
-    padding: 11px 22px;
-
-    background: transparent;
-    color: #d4af37;
-
-    border: 1px solid #d4af37;
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    font-size: 14px;
-
-    transition: 0.3s ease;
-}
-
-.admin-header button:hover {
-    background: #d4af37;
-    color: #111;
-}
-
-
-/* =========================================
-   MAIN CONTENT
-   ========================================= */
-
-.admin-services-content {
-    width: 90%;
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    padding: 55px 0 80px;
-}
-
-.admin-services-content > h2 {
-    margin: 0 0 35px;
-
-    color: #d4af37;
-
-    font-size: 38px;
-    font-weight: 600;
-
-    letter-spacing: 1px;
-}
-
-
-/* =========================================
-   ADD / EDIT FORM
-   ========================================= */
-
-.admin-service-form {
-    width: 100%;
-    box-sizing: border-box;
-
-    padding: 30px;
-
-    margin-bottom: 45px;
-
-    background: linear-gradient(
-        145deg,
-        #18181b,
-        #111113
-    );
-
-    border: 1px solid rgba(212, 175, 55, 0.22);
-
-    border-radius: 16px;
-
-    box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.35);
-}
-
-.admin-service-form h2 {
-    margin: 0 0 22px;
-
-    color: #ffffff;
-
-    font-size: 22px;
-    font-weight: 500;
-}
-
-.admin-service-form input {
-    width: 100%;
-    box-sizing: border-box;
-
-    margin-bottom: 15px;
-
-    padding: 14px 16px;
-
-    background: #222225;
-
-    color: white;
-
-    border: 1px solid #333338;
-
-    border-radius: 9px;
-
-    outline: none;
-
-    font-size: 15px;
-
-    transition: 0.25s ease;
-}
-
-.admin-service-form input::placeholder {
-    color: #777;
-}
-
-.admin-service-form input:focus {
-    border-color: #d4af37;
-
-    box-shadow:
-        0 0 0 3px rgba(212, 175, 55, 0.08);
-}
-
-
-/* =========================================
-   FORM BUTTONS
-   ========================================= */
-
-.admin-service-form > button,
-.service-form-buttons button {
-    padding: 12px 24px;
-
-    border: none;
-
-    border-radius: 8px;
-
-    background: #d4af37;
-
-    color: #111;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: 0.3s ease;
-}
-
-.admin-service-form > button:hover,
-.service-form-buttons button:hover {
-    background: #e5c45c;
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 8px 20px rgba(212, 175, 55, 0.18);
-}
-
-.service-form-buttons {
-    display: flex;
-
-    gap: 12px;
-}
-
-.service-form-buttons button:last-child {
-    background: transparent;
-
-    color: #bbb;
-
-    border: 1px solid #444;
-}
-
-.service-form-buttons button:last-child:hover {
-    background: #292929;
-
-    color: white;
-
-    box-shadow: none;
-}
-
-
-/* =========================================
-   SERVICES GRID
-   ========================================= */
-
-.admin-service-list {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 22px;
-}
-
-
-/* =========================================
-   SERVICE CARD
-   ========================================= */
-
-.admin-service-card {
-    min-height: 190px;
-
-    padding: 24px;
-
-    box-sizing: border-box;
-
-    background: linear-gradient(
-        145deg,
-        #1c1c20,
-        #121214
-    );
-
-    border: 1px solid rgba(212, 175, 55, 0.16);
-
-    border-radius: 15px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.admin-service-card:hover {
-    transform: translateY(-5px);
-
-    border-color: rgba(212, 175, 55, 0.55);
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.4),
-        0 0 25px rgba(212, 175, 55, 0.06);
-}
-
-
-/* =========================================
-   SERVICE INFORMATION
-   ========================================= */
-
-.admin-service-card h3 {
-    margin: 0 0 15px;
-
-    color: #ffffff;
-
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.admin-service-card p {
-    margin: 7px 0;
-
+.services-header p {
+    margin-top: 8px;
     color: #aaa;
-
-    font-size: 14px;
 }
 
-.admin-service-card p:first-of-type {
+
+/* DASHBOARD BUTTON */
+
+.dashboard-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    background: #d4af37;
+    color: #111;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.dashboard-button:hover {
+    background: #f0cc55;
+}
+
+
+/* FORM CARD */
+
+.service-form-card {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.service-form-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
     color: #d4af37;
+}
 
-    font-size: 18px;
 
+/* FORM */
+
+.service-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 15px;
+    align-items: center;
+}
+
+.service-form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    background: #111;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 6px;
+    outline: none;
+}
+
+.service-form input:focus {
+    border-color: #d4af37;
+}
+
+
+/* FORM BUTTONS */
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.add-button,
+.update-button,
+.cancel-button {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.add-button,
+.update-button {
+    background: #d4af37;
+    color: #111;
+}
+
+.add-button:hover,
+.update-button:hover {
+    background: #f0cc55;
+}
+
+.cancel-button {
+    background: #555;
+    color: white;
+}
+
+.cancel-button:hover {
+    background: #666;
+}
+
+
+/* SERVICES LIST */
+
+.services-list-card {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.services-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 25px;
+    border-bottom: 1px solid #333;
+}
+
+.services-list-header h2 {
+    margin: 0;
+    color: #d4af37;
+}
+
+.services-list-header span {
+    color: #aaa;
+}
+
+
+/* TABLE */
+
+.services-table {
+    width: 100%;
+}
+
+.service-table-header,
+.service-table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 25px;
+}
+
+.service-table-header {
+    background: #151515;
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.service-table-row {
+    border-top: 1px solid #333;
+}
+
+.service-table-row:hover {
+    background: #202020;
+}
+
+
+/* SERVICE NAME */
+
+.service-name strong {
+    color: white;
+    font-size: 16px;
+}
+
+
+/* PRICE */
+
+.service-price {
+    color: #d4af37;
     font-weight: 600;
 }
 
 
-/* =========================================
-   EDIT / DELETE BUTTONS
-   ========================================= */
+/* DURATION */
+
+.service-duration {
+    color: #ccc;
+}
+
+
+/* ACTIONS */
 
 .service-actions {
     display: flex;
-
     gap: 10px;
-
-    margin-top: 20px;
-}
-
-.service-actions button {
-    flex: 1;
-
-    padding: 10px 15px;
-
-    border-radius: 7px;
-
-    font-size: 13px;
-
-    cursor: pointer;
-
-    transition: 0.25s ease;
 }
 
 
-/* Edit */
+/* EDIT */
 
-.service-actions button:first-child {
-    background: transparent;
-
-    color: #d4af37;
-
-    border: 1px solid #d4af37;
-}
-
-.service-actions button:first-child:hover {
+.edit-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
     background: #d4af37;
-
     color: #111;
+    font-weight: 600;
+    cursor: pointer;
+}
 
-    transform: translateY(-2px);
+.edit-button:hover {
+    background: #f0cc55;
 }
 
 
-/* Delete */
+/* DELETE */
 
-.service-actions button:last-child {
-    background: transparent;
-
-    color: #d86b6b;
-
-    border: 1px solid #633838;
-}
-
-.service-actions button:last-child:hover {
-    background: #8e3d3d;
-
+.delete-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background: #8b2e2e;
     color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
 
-    border-color: #8e3d3d;
-
-    transform: translateY(-2px);
+.delete-button:hover {
+    background: #a83a3a;
 }
 
 
-/* =========================================
-   LOADING TEXT
-   ========================================= */
+/* LOADING / EMPTY */
 
-.admin-service-list + p,
-.admin-services-content > p {
-    color: #999;
-
-    text-align: center;
-
+.loading-text,
+.empty-text {
     padding: 30px;
+    text-align: center;
+    color: #aaa;
 }
 
 
-/* =========================================
-   RESPONSIVE
-   ========================================= */
+/* MOBILE */
 
 @media (max-width: 900px) {
 
-    .admin-service-list {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+    .admin-services-page {
+        padding: 20px;
     }
 
-}
-
-
-@media (max-width: 600px) {
-
-    .admin-services-content {
-        width: 92%;
-
-        padding-top: 35px;
+    .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
     }
 
-    .admin-services-content > h2 {
-        font-size: 30px;
-    }
-
-    .admin-header {
-        padding: 18px 4%;
-    }
-
-    .admin-header h1 {
-        font-size: 23px;
-    }
-
-    .admin-service-list {
+    .service-form {
         grid-template-columns: 1fr;
     }
 
-    .admin-service-form {
-        padding: 22px;
+    .service-table-header {
+        display: none;
+    }
+
+    .service-table-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .service-actions {
+        margin-top: 10px;
     }
 
 }
